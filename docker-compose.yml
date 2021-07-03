@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  db:
+    container_name: mysql-container
+    image: mysql:latest
+    volumes:
+      - ./db/data:/var/lib/mysql
+    env_file: ./db/dev.env
