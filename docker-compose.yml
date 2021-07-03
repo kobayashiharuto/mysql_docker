@@ -5,5 +5,6 @@ services:
     container_name: mysql-container
     build: ./mysql
     volumes:
-      - ./mysql/db:/docker-entrypoint-initdb.d
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
     env_file: ./mysql/dev.env
