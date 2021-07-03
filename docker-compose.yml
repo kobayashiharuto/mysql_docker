@@ -3,7 +3,7 @@ version: "3"
 services:
   db:
     container_name: mysql-container
-    image: mysql:latest
+    build: ./mysql
     volumes:
-      - ./db/data:/var/lib/mysql
-    env_file: ./db/dev.env
+      - ./mysql/db:/docker-entrypoint-initdb.d
+    env_file: ./mysql/dev.env
